@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Resubscribe to Friendship</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg: #0e1015;
+      --panel: #151922;
+      --card: #1b2030;
+      --border: #2a3142;
+      --text: #e7e9ef;
+      --muted: #a2a9bd;
+      --accent: #5b7cff;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #0e1015, #0b0d12);
+      color: var(--text);
+    }
+
+    header {
+      padding: 50px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 50px 20px 80px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .section, .summary, .confirmation {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .section h2, .summary h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .section p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+    }
+
+    .plan {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .plan .price {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .plan ul {
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .addons {
+      display: grid;
+      gap: 14px;
+    }
+
+    .addon {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .addon input {
+      margin-top: 4px;
+      transform: scale(1.2);
+      accent-color: var(--accent);
+    }
+
+    .addon h4 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .addon p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .summary {
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      margin-top: 18px;
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .confirmation {
+      max-width: 700px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .confirmation ul {
+      text-align: left;
+      color: var(--muted);
+      margin-top: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Resubscribe to Friendship</h1>
+  <p>
+    A literal subscription service for continuing a friendship
+    under updated terms and improved defaults.
+  </p>
+</header>
+
+<!-- CHECKOUT PAGE -->
+<div id="checkout" class="container">
+
+  <div>
+    <div class="section">
+      <h2>Subscription Plan</h2>
+      <p>Continuation without erasing context.</p>
+
+      <div class="plan">
+        <strong>Standard Friendship</strong>
+        <div class="price">£0.00 / year</div>
+        <ul>
+          <li>Respectful communication baseline</li>
+          <li>Boundary awareness</li>
+          <li>Accountability when mistakes occur</li>
+          <li>Ongoing effort, not perfection</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Optional Free Add-Ons</h2>
+      <p>Selectable quality-of-life improvements.</p>
+
+      <div class="addons">
+        <label class="addon">
+          <input type="checkbox" value="Morning Apologies" checked>
+          <div>
+            <h4>Morning Apologies</h4>
+            <p>If something freaky or inappropriate was said the night before, a direct apology follows.</p>
+          </div>
+        </label>
+
+        <label class="addon">
+          <input type="checkbox" value="Improved Tea Responses" checked>
+          <div>
+            <h4>Improved Tea Responses</h4>
+            <p>Better emotional intelligence and memory when discussing drama.</p>
+          </div>
+        </label>
+
+        <label class="addon">
+          <input type="checkbox" value="Late-Night Filter">
+          <div>
+            <h4>Late-Night Filter</h4>
+            <p>Prevents messages that feel fine at night but regrettable later.</p>
+          </div>
+        </label>
+
+        <label class="addon">
+          <input type="checkbox" value="Context Recall+">
+          <div>
+            <h4>Context Recall+</h4>
+            <p>Improved memory of boundaries and important conversations.</p>
+          </div>
+        </label>
+
+        <label class="addon">
+          <input type="checkbox" value="Overthinking Dampener">
+          <div>
+            <h4>Overthinking Dampener</h4>
+            <p>Reduces unnecessary spirals and message re-analysis.</p>
+          </div>
+        </label>
+
+        <label class="addon">
+          <input type="checkbox" value="Accountability Mode">
+          <div>
+            <h4>Accountability Mode</h4>
+            <p>Mistakes are acknowledged directly, without minimising or deflecting.</p>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <h3>Order Summary</h3>
+    <p>Standard Friendship Plan</p>
+    <strong>Total: £0.00</strong>
+
+    <button class="button" onclick="confirmSubscription()">Confirm Resubscription</button>
+  </div>
+
+</div>
+
+<!-- CONFIRMATION PAGE -->
+<div id="confirmation" class="confirmation hidden">
+  <h2>Resubscription Confirmed</h2>
+  <p>Your friendship has been successfully renewed.</p>
+
+  <p><strong>Enabled add-ons:</strong></p>
+  <ul id="selectedAddons"></ul>
+
+  <p style="margin-top:20px;">
+    <strong>Next resubscription reminder:</strong><br>
+    28 December 2026
+  </p>
+</div>
+
+<footer>
+  Resubscribing to Friendship · Conceptual Service · No financial obligation
+</footer>
+
+<script>
+  function confirmSubscription() {
+    const addons = document.querySelectorAll('input[type="checkbox"]:checked');
+    const list = document.getElementById('selectedAddons');
+    list.innerHTML = "";
+
+    addons.forEach(addon => {
+      const li = document.createElement("li");
+      li.textContent = addon.value;
+      list.appendChild(li);
+    });
+
+    document.getElementById('checkout').classList.add('hidden');
+    document.getElementById('confirmation').classList.remove('hidden');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
